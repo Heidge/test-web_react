@@ -14,7 +14,7 @@ let student1: Student = {
 
 let student2: Student = {
     firstName: "Romain",
-    lastName: "Brogniez",
+    lastName: "Brobrogniez",
     age: 33,
     location: "Laval"
 };
