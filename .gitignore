@@ -2,3 +2,5 @@
 bundle.js
 node_modules
 .DS_store
+dist/
+package-lock.json

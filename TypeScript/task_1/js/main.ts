@@ -7,14 +7,42 @@ interface Teacher {
 	[key: string]: any;
 }
 
-// for testing review
+interface Directors extends Teacher {
+	numberOfReports: number;
+}
 
-const teacher: Teacher = {
-	firstName: 'John',
-	fullTimeEmployee: false,
-	lastName: 'Doe',
-	location: 'London',
-	employeeId: 98,
-  };
-  
-  console.log(teacher);
+interface printTeacherFunction {
+	(firstName: string, lastName: string): string;
+}
+
+const printTeacher: printTeacherFunction = (firstName: string, lastName: string) => {
+    return `${firstName.charAt(0)}. ${lastName}`;
+};
+
+interface Student {
+    firstName: string;
+    lastName: string;
+}
+
+interface StudentClassInterface {
+    workOnHomework(): string;
+    displayName(): string;
+}
+
+class StudentClass implements StudentClassInterface {
+	firstName: string;
+	lastName: string;
+
+	constructor({ firstName, lastName }: Student) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+	workOnHomework(): string {
+		return `Currently working`;
+	}
+
+	displayName(): string {
+		return this.firstName;
+	}
+}
